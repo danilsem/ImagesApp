@@ -39,10 +39,12 @@ extension ImageDetailsPresenter: ImageDetailsPresenterInterface {
     func configure(with output: ImageDetails.ViewOutput) -> ImageDetails.ViewInput {
         let photoDescription = image.photoDescription ?? image.altDescription ?? ""
         let photoImageUrl = URL(string: image.urls.full)
+        let likes = "\(image.likes)"
         
         return ImageDetails.ViewInput(
             photoDescription: .just(photoDescription),
-            photoImageUrl: .just(photoImageUrl)
+            photoImageUrl: .just(photoImageUrl),
+            likes: .just(likes)
         )
     }
 

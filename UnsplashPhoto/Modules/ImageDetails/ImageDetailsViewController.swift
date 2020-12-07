@@ -24,7 +24,7 @@ final class ImageDetailsViewController: UIViewController {
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var photoDescriptionLabel: UILabel!
     @IBOutlet weak var rightBlockView: UIView!
-    @IBOutlet weak var leftBlockConstraint: NSLayoutConstraint!
+    @IBOutlet weak var likesLabel: UILabel!
     
     private let disposeBag = DisposeBag()
 
@@ -72,6 +72,10 @@ private extension ImageDetailsViewController {
                 )
             }
             .drive()
+            .disposed(by: disposeBag)
+        
+        input.likes
+            .drive(likesLabel.rx.text)
             .disposed(by: disposeBag)
     }
 

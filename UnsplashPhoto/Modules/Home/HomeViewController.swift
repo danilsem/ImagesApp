@@ -64,7 +64,7 @@ private extension HomeViewController {
     }
     
     func configureViews() {
-        self.navigationItem.title = "Unsplash"
+        self.navigationItem.title = "Discover"
         
         photosCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         photosCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: PhotoCell.identifier)

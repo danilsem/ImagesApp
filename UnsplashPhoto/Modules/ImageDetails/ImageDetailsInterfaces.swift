@@ -35,6 +35,7 @@ enum ImageDetails {
     struct ViewInput {
         let photoDescription: Driver<String>
         let photoImageUrl: Driver<URL?>
+        let likes: Driver<String>
     }
 
 }
